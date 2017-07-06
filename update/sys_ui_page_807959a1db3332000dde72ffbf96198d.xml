@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[(function(){
+var user = new GlideRecord('x_138481_pi_tracke_christus_lss_community');
+user.initialize();
+user.first_name = firstname;
+user.last_name = lastname;
+user.email = email;
+user.password = password;
+user.user_name = firstname.toLowerCase() + "." + lastname.toLowerCase();
+user.insert();
+})();
+]]></client_script>
+        <description>page where people can sign up for the LSSGB community</description>
+        <direct>false</direct>
+        <endpoint>x_138481_pi_tracke_sign up.do</endpoint>
+        <html><![CDATA[<html>
+	<head>
+		<style>
+			body {
+				font-family: "Helvetica Neue";
+				background: mintcream;
+				
+			}
+			#main-container {
+				text-align: center;
+				padding-top: 100px;
+			}
+			#form-container {
+				position: relative;
+				color: darkgreen;
+				background: honeydew;
+				width: 600px;
+				border-radius: 4px;
+				margin: auto;
+				<!-- box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px
+rgba(0,0,0,0.24); -->
+				box-shadow: 0 1px 3px forestgreen, 0 1px 2px palegreen;
+			}
+			#form-container-header {
+				padding-top: 10px;
+				font-size: 28px;
+				font-weight: bolder;
+			}
+			#form-container-body {
+				text-align: left;
+				padding-left: 50px;
+				padding-right: 50px;
+				font-weight: normal;
+				font-size:16px
+			}
+			#form-container-footer {
+				padding-bottom: 10px;
+			}
+			hr {
+				display: block;
+				height: 1px;
+				border: 0;
+				border-top: 1px solid #ccc;
+				margin: 1em 0;
+				padding: 0;
+				margin-bottom: 5px;
+			}
+			label {
+				font-family: "Helvetica Neue";
+				font-weight: bold;
+				width:180px;
+				<!-- clear:left; -->
+				text-align:left;
+				<!-- padding-right:10px; -->
+			}
+			input[type=text],input[type=email],input[type=password], select {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main-container">
+		<div id="form-container">
+		<div id="form-container-header">Self-Registration Form</div>
+		<hr />
+		<div id="form-container-body">
+			<g:ui_form>
+				<label for="firstname">First name:</label>
+				<input type="text" id="firstname" name="firstname"/>
+				<br />
+				<label for="lastname">Last name:</label>
+				<input type="text" id="lastname" name="lastname"/>
+				<br />
+				<label for="email">Email:</label>
+				<input id="email" type="email" name="email" />
+				<br />
+				<label for="password">Password:</label>
+				<input id="password" type="password" name="password" />
+				<br />
+				<button id="ok_button" class="btn btn-primary" onclick="return true;" type="submit" style="width: 5em;">Submit</button>
+				<input type="HIDDEN" value="none" name="sys_action" />
+			</g:ui_form>
+		</div>
+		<hr />
+		<div id="form-container-footer">
+		Powered by ServiceNow
+		</div>
+		</div>
+		</div>
+	</body>
+</html>
+
+
+]]></html>
+        <name>sign up</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-06 14:43:23</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>807959a1db3332000dde72ffbf96198d</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>sign up</sys_name>
+        <sys_package display_value="PI_Tracker" source="x_138481_pi_tracke">c6fe2691db2332000dde72ffbf9619b7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="PI_Tracker">c6fe2691db2332000dde72ffbf9619b7</sys_scope>
+        <sys_update_name>sys_ui_page_807959a1db3332000dde72ffbf96198d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-06 15:24:03</sys_updated_on>
+    </sys_ui_page>
+</record_update>

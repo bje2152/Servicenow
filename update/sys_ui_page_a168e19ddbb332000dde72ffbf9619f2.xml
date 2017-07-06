@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function check() {  
+    if(!cellUser()){  
+        alert (getMessage('Please choose an approver to review and approve your renewal contract'));  
+        return false;  
+    }  
+    var c = gel('check_or_cancel');  
+    c.value = "check";  
+  return true;  
+}  
+  
+  
+function cancel() {  
+    var c = gel('check_or_cancel');  
+    c.value = "cancel";  
+    return true;  
+}  
+  
+  
+document.observe("dom:loaded", function() {  
+  $("check").observe("click",function(event){  
+  event.stop();  
+  window.location="u_cellusage_list.do?sysparm_query=u_user=" +$F("cellUser");  
+  return false;  
+  })  
+ });  ]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_138481_pi_tracke_test3.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<g:ui_form>  
+  
+  
+<p><b>LSSGB Project Lookup</b></p>  
+  
+  
+  <input type="hidden" name="check_or_cancel" id="check_or_cancel" value=""/>  
+  <input type="hidden" name="start_error" id="start_error" value="false"/>  
+  <input type="hidden" name="end_error" id="end_error" value="false"/>  
+  
+  
+   <!-- Set up form fields and labels -->  
+   <table width="50%">  
+     <tr id="description_row" valign="top">  
+        <th colspan="6">  
+           ${jvar_short_text}  
+        </th>  
+     </tr>  
+  
+  
+    <tr>  
+       <td>  
+           <span id="mandatory" class="mandatory_populated label_description" colspan="1">&#160;</span>  
+           ${gs.getMessage("Cell User")}:  
+       </td>  
+  
+  
+        <g:evaluate var="jvar_request">  
+        var appUser = new GlideRecord("u_cell_user");  
+               appUser.addQuery("sys_id", "${jvar_cellUser}");  
+               appUser.query();  
+               appUser.next();  
+               appUser;  
+       </g:evaluate>  
+  
+  
+       <td>  
+           <j:if test="${jvar_cellUser !=''}">  
+             <g:ui_reference mandatory="true" name="cellUser" table="x_138481_pi_tracke_raw_lssgb_projects" value="$[appUser.sys_id]" displayValue="$[appUser.user]" />  
+           </j:if>  
+           <j:if test="${jvar_cellUser ==''}">  
+             <g:ui_reference mandatory="true" name="cellUser" table="x_138481_pi_tracke_raw_lssgb_projects" />  
+           </j:if>  
+             
+       </td>  
+    </tr>  
+  
+  
+     <tr id="dialog_buttons">  
+        <td colspan="6" align="right">  
+  
+  
+           <input type="hidden" name="current_sys_id" value="${RP.getWindowProperties().get('sys_id')}"/>  
+           <input type="submit" id="check" onclick="return check();" title="${gs.getMessage('Will Check Eligibility')}" value ="${gs.getMessage('Check Eligibility')}" style="background-color: #777777; color: white; margin-right:4px; font-weight: bold;" />  
+  
+  
+          <input type="submit" id="cancel" onclick="return cancel();" title="${gs.getMessage('Cancel')}" value ="${gs.getMessage('Cancel')}" style="background-color: #777777; color: white; font-weight: bold; margin-right:4px;"/>  
+  
+  
+       </td>  
+     </tr>  
+  </table>  
+</g:ui_form>  
+  
+</j:jelly>]]></html>
+        <name>test3</name>
+        <processing_script><![CDATA[if(check_or_cancel == "check") {  
+    response.sendRedirect("<instanceURL>/<table>.do?sysparm_query=u_user=<sys_ID>");  
+}  
+  
+  
+  
+  
+if(check_or_cancel == "cancel") {  
+    var urlOnStack = GlideSession.get().getStack().bottom();  
+    response.sendRedirect(urlOnStack);  
+}  ]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-05 20:47:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a168e19ddbb332000dde72ffbf9619f2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>test3</sys_name>
+        <sys_package display_value="PI_Tracker" source="x_138481_pi_tracke">c6fe2691db2332000dde72ffbf9619b7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="PI_Tracker">c6fe2691db2332000dde72ffbf9619b7</sys_scope>
+        <sys_update_name>sys_ui_page_a168e19ddbb332000dde72ffbf9619f2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-05 21:10:55</sys_updated_on>
+    </sys_ui_page>
+</record_update>

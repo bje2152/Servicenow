@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var c = this;
+ 
+  // Firstname / Lastname
+  c.firstname = "";
+  c.lastname = "";
+ 
+  // Gender
+  c.gender = "";
+  c.genderchoice = [{
+  genderdisplay: "Male",
+  gendervalue: 'M'
+  }, {
+  genderdisplay: 'Female',
+  gendervalue: 'F'
+  }];
+ 
+  c.genderchoicelistoption = {
+  hideSearch: true,
+  placeholder: "Gender"
+  };
+ 
+  // Manager
+  c.manager = {
+  displayValue: "",
+  value: "",
+  name: 'managerfield'
+  };
+ 
+  // Entry Date Settings
+  c.entrydatemodel = c.data.now;
+  c.entrydatedisabled = true;
+ 
+  c.entrydate = {
+  placeholder: "${Entry date}",
+  name: 'entrydate'
+  };
+ 
+  // Exit Date Settings
+  c.exitdatemodel = "";
+  c.exitdatedisabled = false;
+ 
+  c.exitdate = {
+  placeholder: "${Exit date}",
+  name: 'exitdate'
+  };]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_138481_pi_tracke_PiTrackerFormPage2.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<div>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label>
+        <span style="padding-right: .25em" title="Mandatory" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': c.firstname != ''}"></span>
+        First name
+      </label>
+      <input type="text" class="form-control" placeholder="First name" ng-model="c.firstname"></input>
+    </div>
+ 
+ 
+    <div class="form-group">
+      <label>
+        <span style="padding-right: .25em" title="Mandatory" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': c.lastname != ''}"></span>
+        Last name
+      </label>
+		<input type="text" class="form-control" placeholder="Last name" ng-model="c.lastname"></input>
+    </div>
+  
+    <div class="form-group">
+      <label>
+        <span style="padding-right: .25em" title="Mandatory" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': c.manager.value != ''}"></span>
+        Manager
+      </label>
+      <sn-record-picker field="c.manager" table="'sys_user'" display-field="'name'" display-fields="'email'" value-field="'sys_id'" search-fields="'name'" page-size="100" placeholder="Manager" default-query="'name=Stefan Lutz'"></sn-record-picker>
+    </div>
+ 
+    <div class="form-group">
+      <label>
+        <span style="padding-right: .25em" title="Mandatory" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': c.gender}"></span>
+        Gender
+      </label>
+      <sn-choice-list sn-model="c.gender" sn-options="c.genderchoicelistoption" sn-value-field="gendervalue" sn-text-field="genderdisplay" sn-items="c.genderchoice"></sn-choice-list>
+    </div>
+ 
+    <div class="form-group">
+      <label>
+        <span style="padding-right: .25em" title="Mandatory" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': c.entrydatemodel != ''}"></span>
+        Entry date
+      </label>
+      <sp-date-picker field="entrydate" sn-disabled="c.entrydatedisabled" ng-model="c.entrydatemodel" sn-change="" ></sp-date-picker>
+    </div>
+ 
+    <div class="form-group">
+      <label>
+        <span style="padding-right: .25em" title="Mandatory" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': c.exitdatemodel != ''}"></span>
+        Exit date
+      </label>
+      <sp-date-picker field="exitdate" sn-disabled="c.exitdatedisabled" ng-model="c.exitdatemodel" sn-change="c.exitdateChange()" Placeholder="Exit date"></sp-date-picker>
+    </div>
+  </form>
+</div>
+</j:jelly>]]></html>
+        <name>PiTrackerFormPage2</name>
+        <processing_script><![CDATA[var now = new GlideDateTime(); 
+data.now = now.getDate().getDisplayValue();]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-30 17:10:55</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b7968f27db6332000dde72ffbf961976</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PiTrackerFormPage2</sys_name>
+        <sys_package display_value="PI_Tracker" source="x_138481_pi_tracke">c6fe2691db2332000dde72ffbf9619b7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="PI_Tracker">c6fe2691db2332000dde72ffbf9619b7</sys_scope>
+        <sys_update_name>sys_ui_page_b7968f27db6332000dde72ffbf961976</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-06-30 17:10:55</sys_updated_on>
+    </sys_ui_page>
+</record_update>

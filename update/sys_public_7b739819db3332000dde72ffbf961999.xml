@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_public">
+    <sys_public action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <page>sys_ui_page_89fc2a1edb6332000dde72ffbf9619df</page>
+        <sys_class_name>sys_public</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-05 14:36:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7b739819db3332000dde72ffbf961999</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>sys_ui_page_89fc2a1edb6332000dde72ffbf9619df</sys_name>
+        <sys_package display_value="PI_Tracker" source="x_138481_pi_tracke">c6fe2691db2332000dde72ffbf9619b7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="PI_Tracker">c6fe2691db2332000dde72ffbf9619b7</sys_scope>
+        <sys_update_name>sys_public_7b739819db3332000dde72ffbf961999</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-05 14:39:40</sys_updated_on>
+    </sys_public>
+</record_update>

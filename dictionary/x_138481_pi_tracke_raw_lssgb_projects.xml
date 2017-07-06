@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="RAW_LSSGB_Projects" max_length="40" name="x_138481_pi_tracke_raw_lssgb_projects" type="collection">
+        <element attributes="import_attribute_name=A3: Control Plan,edge_encryption_enabled=true" label="A3: Control Plan" max_length="422" name="u_a3__control_plan" type="string"/>
+        <element attributes="import_attribute_name=A3: Countermeasures,edge_encryption_enabled=true" label="A3: Countermeasures" max_length="2198" name="u_a3__countermeasures" type="string"/>
+        <element attributes="import_attribute_name=A3: Current Condition,edge_encryption_enabled=true" label="A3: Current Condition" max_length="780" name="u_a3__current_condition" type="string"/>
+        <element attributes="import_attribute_name=A3: Problem Statement,edge_encryption_enabled=true" label="A3: Problem Statement" max_length="639" name="u_a3__problem_statement" type="string"/>
+        <element attributes="import_attribute_name=A3: RCA,edge_encryption_enabled=true" label="A3: RCA" max_length="1149" name="u_a3__rca" type="string"/>
+        <element attributes="import_attribute_name=Business Customer,edge_encryption_enabled=true" label="Business Customer" max_length="40" name="u_business_customer" type="string"/>
+        <element attributes="import_attribute_name=Expected Results,edge_encryption_enabled=true" label="Expected Results" max_length="475" name="u_expected_results" type="string"/>
+        <element attributes="import_attribute_name=FY,edge_encryption_enabled=true" label="FY" max_length="40" name="u_fy" type="string"/>
+        <element attributes="import_attribute_name=GB Class,edge_encryption_enabled=true" choice="1" label="GB Class" max_length="40" name="u_gb_class" type="string">
+            <choice>
+                <element label="Choice 1" sequence="0" value="Choice 1"/>
+                <element label="Choice 2" sequence="1" value="Choice 2"/>
+                <element label="Choice 3" sequence="2" value="Choice 3"/>
+            </choice>
+        </element>
+        <element attributes="import_attribute_name=GB Lead,edge_encryption_enabled=true" label="GB Lead" max_length="40" name="u_gb_lead" type="string"/>
+        <element attributes="import_attribute_name=GB Team Members,edge_encryption_enabled=true" label="GB Team Members" max_length="63" name="u_gb_team_members" type="string"/>
+        <element attributes="import_attribute_name=Implementation Plan,edge_encryption_enabled=true" label="Implementation Plan" max_length="975" name="u_implementation_plan" type="string"/>
+        <element attributes="import_attribute_name=IM Led,edge_encryption_enabled=true" label="IM Led" max_length="40" name="u_im_led" type="string"/>
+        <element attributes="import_attribute_name=Possible IM PI,edge_encryption_enabled=true" label="Possible IM PI" max_length="80" name="u_possible_im_pi" type="string"/>
+        <element attributes="import_attribute_name=Project Name,edge_encryption_enabled=true" label="Project Name" max_length="64" name="u_project_name" type="string"/>
+        <element attributes="import_attribute_name=Project Type (Run Grow Transform),edge_encryption_enabled=true" label="Project Type (Run Grow Transform)" max_length="40" name="u_project_type_row_transform_" type="string"/>
+        <element attributes="import_attribute_name=SPI Lead,edge_encryption_enabled=true" label="SPI Lead" max_length="40" name="u_spi_lead" type="string"/>
+        <element attributes="import_attribute_name=SPI Portfolio Name,edge_encryption_enabled=true" label="SPI Portfolio Name" max_length="40" name="u_spi_portfolio_name" type="string"/>
+        <element attributes="import_attribute_name=#,edge_encryption_enabled=true" label="#" max_length="40" name="u__" type="string"/>
+    </element>
+</database>

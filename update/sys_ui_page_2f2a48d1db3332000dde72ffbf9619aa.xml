@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function validateComments() {
+   //This script is called when the user clicks "OK" in the dialog window
+
+   //Make sure there are comments to submit
+   var comments = gel("dialog_comments").value;
+   comments = trim(comments);
+   if (comments == "") {
+      //If comments are empty, alert the user and stop submission
+      alert("Please enter your comments before submitting.");
+      return false;
+   }
+
+   //If there are comments, close the dialog window and submit them
+   GlideDialogWindow.get().destroy(); //Close the dialog window
+   g_form.setValue("comments", comments); //Set the "Comments" field with comments in the dialog
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_138481_pi_tracke_PITracker Table View.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<g:ui_form>
+  <!-- Get the values from dialog preferences -->
+  <g:evaluate var="jvar_short_text"
+    expression="RP.getWindowProperties().get('short_text')" />
+  <g:evaluate var="jvar_comments_text"
+    expression="RP.getWindowProperties().get('comments_text')" />
+   <!-- Set up form fields and labels -->
+   <table width="100%">
+     <tr id="description_row" valign="top">
+        <td colspan="2">
+           <!-- Short description value used as a label -->
+           ${jvar_short_text}
+        </td>
+     </tr>
+     <tr>
+       <td>
+         <!-- Comments text field (Contains comments from originating record as a default) -->
+         <g:ui_multiline_input_field name="dialog_comments" id="dialog_comments" label="Additional comments" 
+            value="${jvar_comments_text}" mandatory="true" />
+       </td>
+     </tr>
+     <tr>
+       <td colspan="2">
+       </td>
+     </tr>
+     <tr id="dialog_buttons">
+        <td colspan="2" align="right">
+           <!-- Add OK/Cancel buttons. Clicking OK calls the validateComments script -->
+           <g:dialog_buttons_ok_cancel ok="return validateComments()" ok_type="button" cancel_type="button" />
+        </td>
+     </tr>
+  </table>
+</g:ui_form>
+ 
+</j:jelly>]]></html>
+        <name>PITracker Table View</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-05 13:55:45</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>2f2a48d1db3332000dde72ffbf9619aa</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>PITracker Table View</sys_name>
+        <sys_package display_value="PI_Tracker" source="x_138481_pi_tracke">c6fe2691db2332000dde72ffbf9619b7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="PI_Tracker">c6fe2691db2332000dde72ffbf9619b7</sys_scope>
+        <sys_update_name>sys_ui_page_2f2a48d1db3332000dde72ffbf9619aa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-05 14:05:24</sys_updated_on>
+    </sys_ui_page>
+</record_update>

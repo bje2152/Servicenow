@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>true</direct>
+        <endpoint>x_138481_pi_tracke_PITrackerUIAddProject.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<script language="javascript" src="x_138481_pi_tracke.Angular_1_3_framework.jsdbx" />
+<script src="x_snc_marketing_ev.app_angular_todo.jsdbx"></script>
+	<script src="x_138481_pi_tracke.PiTracker script cont.jsdbx"></script>
+<script src="lib/common/jquery.min.js"></script>
+<script src="lib/common/bootstrap.min.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-route.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+	<body>
+		  <h1>LSSGB Projects</h1>
+		<h3>To add a new project fill out and submit this form.</h3>
+    <form class="form-horizontal" role="form" ng-controller="MyCtrl1">
+      <div class="form-group">
+        <label for="inputName3" class="col-sm-1 control-label">Project Name</label>
+        <div class="col-sm-4">
+			<input class="form-control" id="inputName3" placeholder="Project Name" ng-model = "formInfo.ProjectName"></input>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputProjectLead3" class="col-sm-1 control-label">Project Lead</label>
+        <div class="col-sm-4">
+			<input class="form-control" id="inputProjectLead3" placeholder="Project Lead" ng-model = "formInfo.ProjectLead"></input>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputTeamMembers3" class="col-sm-1 control-label">Team Members</label>
+        <div class="col-sm-4">
+			<input class="form-control" id="inputteamMembers3" placeholder="Team Members" ng-model = "formInfo.TeamMembers"></input>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-10">
+          <button type="submit" ng-click="saveData()" class="btn btn-success">Add Project</button>
+        </div>
+      </div>
+		<span>{{formInfo}}</span>
+    </form>
+		  </body>
+
+<!-- <div ng-app="todo">
+	 <div class="col-md-6" ng-controller="TodoListCtrl">
+            <h1>LSSGB Projects</h1>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="todoItem in todos" ng-bind="Project Name"></li>
+            </ul>
+            <div>
+                <label>Add new todo:
+                    <input class="form-control" ng-model="newTodo"/>
+                </label>
+                <button ng-click="add(newTodo)" type="button" class="btn btn-primary">Add Todo</button>
+            </div>
+		 </div>
+    <input type="text" ng-model="myVar"/>
+ </div> -->
+	<span ng-show="projectnameRequired">{{projectnameRequired}}</span>
+<span ng-show="teammembersRequired">{{teammembersRequired}}</span>
+<span ng-show="projectleadRequired">{{projectleadRequired}}</span>
+</j:jelly>]]></html>
+        <name>PITrackerUIAddProject</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-26 18:08:00</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>89fc2a1edb6332000dde72ffbf9619df</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>PITrackerUIAddProject</sys_name>
+        <sys_package display_value="PI_Tracker" source="x_138481_pi_tracke">c6fe2691db2332000dde72ffbf9619b7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="PI_Tracker">c6fe2691db2332000dde72ffbf9619b7</sys_scope>
+        <sys_update_name>sys_ui_page_89fc2a1edb6332000dde72ffbf9619df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-05 19:25:00</sys_updated_on>
+    </sys_ui_page>
+</record_update>
